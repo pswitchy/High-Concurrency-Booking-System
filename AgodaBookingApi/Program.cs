@@ -24,6 +24,12 @@ builder.Services.AddStackExchangeRedisCache(options => {
     options.Configuration = redisConn;
 });
 
+builder.Services.AddSingleton<IEmailProducer, RabbitMqProducer>();
+
+// 2. Register the Consumer (The Background Worker)
+// This starts the "WmailBackgroundService" automatically when the app starts
+builder.Services.AddHostedService<EmailBackgroundService>();
+
 // RedLock (Distributed Locking)
 builder.Services.AddSingleton<IDistributedLockFactory>(sp =>
 {
