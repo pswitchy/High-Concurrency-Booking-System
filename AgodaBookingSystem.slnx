@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="AgodaBookingApi.Tests/AgodaBookingApi.Tests.csproj" />
+  <Project Path="AgodaBookingApi/AgodaBookingApi.csproj" />
+  <Project Path="BookingSimulator/BookingSimulator.csproj" />
+</Solution>
